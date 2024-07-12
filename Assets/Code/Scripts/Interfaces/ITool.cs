@@ -4,6 +4,8 @@
     {
         ETools Tool { get; }
         
+        ElementItem ContainerElement { get; }
+        
         void SetElement(ElementItem element);
     }
 }

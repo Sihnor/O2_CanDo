@@ -133,8 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 918527686}
   - component: {fileID: 918527685}
-  - component: {fileID: 918527687}
   - component: {fileID: 918527688}
+  - component: {fileID: 918527689}
   m_Layer: 0
   m_Name: MixerTool
   m_TagString: Untagged
@@ -209,21 +209,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &918527687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918527684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60534350545a4192a23c3415ac9e0d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartTool: 1
-  StartPosition: {x: 6.5, y: -3, z: 0}
-  EndPosition: {x: 4, y: 4, z: 0}
 --- !u!61 &918527688
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -269,6 +254,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &918527689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918527684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe26aa73ada4420bc23f5d74cf6e0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartTool: 0
+  StartPosition: {x: -6.5, y: -3, z: 0}
+  EndPosition: {x: 4, y: 4, z: 0}
 --- !u!1 &1165895965
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,8 +416,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1341767751}
   - component: {fileID: 1341767750}
-  - component: {fileID: 1341767752}
   - component: {fileID: 1341767753}
+  - component: {fileID: 1341767754}
   m_Layer: 0
   m_Name: ShakerTool
   m_TagString: Untagged
@@ -492,21 +492,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1341767752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341767749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60534350545a4192a23c3415ac9e0d6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartTool: 0
-  StartPosition: {x: -6.5, y: -3, z: 0}
-  EndPosition: {x: 4, y: 4, z: 0}
 --- !u!61 &1341767753
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -552,6 +537,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &1341767754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341767749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbdda2e73a324b7d819c40f2e59be03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartTool: 0
+  StartPosition: {x: 6.5, y: -3, z: 0}
+  EndPosition: {x: 4, y: 4, z: 0}
 --- !u!1001 &2125790196730291484
 PrefabInstance:
   m_ObjectHideFlags: 0

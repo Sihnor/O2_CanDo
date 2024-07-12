@@ -4,32 +4,14 @@ using UnityEngine;
 
 namespace Code.Scripts
 {
-    public class ToolClass : MonoBehaviour, ITool, IDraggable
+    public abstract class ToolClass : MonoBehaviour, IDraggable
     {
         [SerializeField] private ETools StartTool;
         
-        private EElement CurrentElement;
-        
-        public ETools Tool { get; private set; }
-
-        public void SetElement(ElementItem element)
-        {
-        }
-
-        private void Start()
-        {
-            this.Tool = this.StartTool;
-        }
-        
-        public void SetElement(EElement element)
-        {
-            this.CurrentElement = element;
-        }
-
         public bool bIsDragging { get; private set; }
 
-        public Vector3 StartPosition = Vector3.zero;
-        public Vector3 EndPosition = Vector3.zero;
+        [SerializeField] protected Vector3 StartPosition = Vector3.zero;
+        [SerializeField] protected Vector3 EndPosition = Vector3.zero;
 
         private float fWidth = 0.0f;
         private float fHeight = 0.0f;
