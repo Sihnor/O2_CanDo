@@ -6,15 +6,21 @@ namespace Code.Scripts.Menu
     public class ElementMenuScroll : MonoBehaviour
     {
         [SerializeField] private GameObject ListElements;
+        
+        [SerializeField] private GameObject MinPos;
         float MinScroll;
-        float MaxScroll = 5.46f;
+        float MaxScroll = 13.54f;
+        
+        Vector3 ListOffset;
+        
+        float GlobalScroll = 0;
         
         private bool bIsInside = false;
-
-        private void Start()
+        
+        public void SetOffset()
         {
-            this.MinScroll = this.ListElements.transform.position.y;
-            Debug.Log(this.MinScroll);
+            this.MinScroll = this.MinPos.transform.position.y;
+            this.MaxScroll = this.MinScroll + 13.54f;
         }
 
         private void OnMouseEnter()
@@ -36,7 +42,9 @@ namespace Code.Scripts.Menu
             if (scroll == 0) return;
             
             Vector3 position = this.ListElements.transform.position;
+            
             position.y -= scroll;
+            
             position.y = Mathf.Clamp(position.y, this.MinScroll, this.MaxScroll);
             this.ListElements.transform.position = position;
         }

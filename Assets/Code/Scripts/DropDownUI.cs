@@ -1,10 +1,12 @@
 using System;
 using Code.Scripts.Interfaces;
+using Code.Scripts.Menu;
 using UnityEngine;
 
 public class DropDownUI : MonoBehaviour, IDraggable 
 {
     [SerializeField] private GameObject ListObject;
+    [SerializeField] private GameObject ListElements;
 
     [SerializeField] private float startPos;
     [SerializeField] private float endPos;
@@ -41,5 +43,6 @@ public class DropDownUI : MonoBehaviour, IDraggable
 
     public void OnMouseUp()
     {
+        this.ListElements.GetComponent<ElementMenuScroll>().SetOffset();
     }
 }
