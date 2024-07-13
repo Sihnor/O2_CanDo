@@ -8,8 +8,10 @@ namespace Code.Scripts.Menu
         [SerializeField] private GameObject ListElements;
         
         [SerializeField] private GameObject MinPos;
+        [SerializeField] private GameObject MaxPos;
+        
         float MinScroll;
-        float MaxScroll = 13.54f;
+        float MaxScroll;
         
         Vector3 ListOffset;
         
@@ -20,7 +22,7 @@ namespace Code.Scripts.Menu
         public void SetOffset()
         {
             this.MinScroll = this.MinPos.transform.position.y;
-            this.MaxScroll = this.MinScroll + 13.54f;
+            this.MaxScroll = this.MaxPos.transform.position.y;
         }
 
         private void OnMouseEnter()

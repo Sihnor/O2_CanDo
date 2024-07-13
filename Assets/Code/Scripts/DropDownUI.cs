@@ -18,7 +18,9 @@ public class DropDownUI : MonoBehaviour, IDraggable
 
     private void Start()
     {
-        this.startPos = this.ListObject.transform.position.y;
+        this.endPos = 0.38f;
+//        this.startPos = this.ListObject.transform.position.y;
+        this.startPos = 7.12f;
     }
 
     public void OnMouseDown()

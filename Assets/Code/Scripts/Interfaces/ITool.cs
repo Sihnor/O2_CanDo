@@ -6,6 +6,6 @@
         
         ElementItem ContainerElement { get; }
         
-        void SetElement(ElementItem element);
+        bool SetElement(ElementItem element);
     }
 }

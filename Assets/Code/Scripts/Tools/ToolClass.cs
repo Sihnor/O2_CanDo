@@ -8,7 +8,7 @@ namespace Code.Scripts
     {
         [SerializeField] private ETools StartTool;
         
-        public bool bIsDragging { get; private set; }
+        public bool bIsDragging { get; protected set; }
 
         [SerializeField] protected Vector3 StartPosition = Vector3.zero;
         [SerializeField] protected Vector3 EndPosition = Vector3.zero;
@@ -54,10 +54,7 @@ namespace Code.Scripts
             this.transform.position = new Vector3(mousePosition.x, mousePosition.y, this.transform.position.z);
         }
 
-        public void OnMouseUp()
-        {
-            this.bIsDragging = false;
-        }
+        public abstract void OnMouseUp();
 
         private void OnDrawGizmos()
         {

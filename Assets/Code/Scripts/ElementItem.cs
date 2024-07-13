@@ -23,5 +23,11 @@ namespace Code.Scripts
         {
             this.Element = element;
         }
+        
+        public void SetStateOfMatter(EStateOfMatter stateOfMatter)
+        {
+            this.StateOfMatter = stateOfMatter;
+            this.StartStateOfMatter = stateOfMatter;
+        }
     }
 }

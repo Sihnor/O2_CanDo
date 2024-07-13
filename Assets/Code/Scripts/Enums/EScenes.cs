@@ -6,6 +6,7 @@
         StartScene,
         MainMenu,
         Settings,
+        Credits,
         MainGame
     }
 }
