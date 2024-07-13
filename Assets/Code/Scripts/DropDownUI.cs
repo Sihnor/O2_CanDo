@@ -1,11 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
 using Code.Scripts.Interfaces;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class DropDownUI : MonoBehaviour, IDraggable 
 {
@@ -19,24 +14,29 @@ public class DropDownUI : MonoBehaviour, IDraggable
 
     public bool bIsDragging { get; }
 
+    private void Start()
+    {
+        this.startPos = this.ListObject.transform.position.y;
+    }
+
     public void OnMouseDown()
     {
         this.ListOffset = this.ListObject.transform.position;
-        this.MouseOffset = Input.mousePosition;
+        this.MouseOffset = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void OnMouseDrag()
     {
         Vector3 pos = this.ListObject.transform.position;
-            
-        pos.y = Input.mousePosition.y - this.MouseOffset.y + this.ListOffset.y;
+
+        pos.y = (Camera.main.ScreenToWorldPoint(Input.mousePosition).y - this.MouseOffset.y + this.ListOffset.y);
+        
+        if(pos.y > this.startPos)
+            pos.y = this.startPos;
+        else if(pos.y < this.endPos)
+            pos.y = this.endPos;
         
         this.ListObject.transform.position = pos;
-
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.x = transform.position.x;
-        mousePosition.z = transform.position.z;
-        transform.position = mousePosition;
     }
 
     public void OnMouseUp()
