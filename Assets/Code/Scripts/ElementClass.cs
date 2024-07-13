@@ -18,6 +18,7 @@ public class ElementClass : MonoBehaviour, IDraggable
 
     public void OnMouseDown()
     {
+        Debug.Log("OnMouseDown");
         this.bIsDragging = true;
 
         this.ElementItemInstance = Instantiate(this.ElementItem, this.transform.position, Quaternion.identity);
