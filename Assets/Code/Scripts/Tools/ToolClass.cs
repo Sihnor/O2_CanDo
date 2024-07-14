@@ -19,9 +19,12 @@ namespace Code.Scripts
         public void OnMouseDown()
         {
             this.bIsDragging = true;
-            
             this.fHeight = this.EndPosition.y / 2;
             this.fWidth = this.EndPosition.x / 2;
+            
+            Vector3 currentPosition = this.transform.position;
+            currentPosition.z = -0.5f;
+            this.transform.position = currentPosition;
         }
 
         public void OnMouseDrag()
