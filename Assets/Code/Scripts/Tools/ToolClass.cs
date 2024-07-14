@@ -18,6 +18,7 @@ namespace Code.Scripts
         
         public void OnMouseDown()
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/grab_device");
             this.bIsDragging = true;
             this.fHeight = this.EndPosition.y / 2;
             this.fWidth = this.EndPosition.x / 2;
@@ -61,6 +62,7 @@ namespace Code.Scripts
 
         private void OnDrawGizmos()
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/grab_device");
             // Draw red rectangle  without infill only border on the bottom of the screen
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(this.StartPosition, this.EndPosition);
