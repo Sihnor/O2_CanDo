@@ -27,12 +27,22 @@ namespace Code.Scripts
             StartWalkingOut();
         }
 
+        private void Awake()
+        {
+            this.Animator = this.GetComponent<Animator>();
+        }
+
         private void Start()
         {
             this.Animator = this.GetComponent<Animator>();
             StartWalkingIn();
         }
-        
+
+        private void OnEnable()
+        {
+            StartWalkingIn();
+        }
+
         public void StartWalkingIn()
         {
             this.Animator.SetTrigger("StartWalkIn");
