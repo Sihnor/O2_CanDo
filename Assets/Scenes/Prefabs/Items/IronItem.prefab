@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e3249bc74a46a683996a6d4343e4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartElement: 0
+  StartElement: 5
   StartStateOfMatter: 0
 --- !u!212 &6425773756091662233
 SpriteRenderer:
