@@ -1,38 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Net;
+using System;
+using Code.Scripts.Interfaces;
+using Code.Scripts.Menu;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
-public class DropDownUI : MonoBehaviour, IBeginDragHandler, IEndDragHandler
+public class DropDownUI : MonoBehaviour, IDraggable 
 {
     [SerializeField] private GameObject ListObject;
+    [SerializeField] private GameObject ListElements;
 
     [SerializeField] private float startPos;
     [SerializeField] private float endPos;
-    private RectTransform rectTransform;
 
-    bool drag;
-    private void Awake()
+    Vector3 ListOffset;
+    Vector3 MouseOffset;
+
+    public bool bIsDragging { get; }
+
+    private void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
-    }
-    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
-    {
-        drag = true;
+        this.endPos = 0.38f;
+//        this.startPos = this.ListObject.transform.position.y;
+        this.startPos = 7.12f;
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnMouseDown()
     {
-        drag = false;
+        this.ListOffset = this.ListObject.transform.position;
+        this.MouseOffset = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
-    private void Update()
+
+    public void OnMouseDrag()
     {
-        if(drag)
-        {
-            rectTransform.position = new Vector3(rectTransform.position.x, Mathf.Clamp(Input.mousePosition.y, endPos, startPos));
-            Debug.Log(Input.mousePosition.y);
-        }
+        Vector3 pos = this.ListObject.transform.position;
+
+        pos.y = (Camera.main.ScreenToWorldPoint(Input.mousePosition).y - this.MouseOffset.y + this.ListOffset.y);
+        
+        if(pos.y > this.startPos)
+            pos.y = this.startPos;
+        else if(pos.y < this.endPos)
+            pos.y = this.endPos;
+        
+        this.ListObject.transform.position = pos;
+    }
+
+    public void OnMouseUp()
+    {
+        this.ListElements.GetComponent<ElementMenuScroll>().SetOffset();
     }
 }

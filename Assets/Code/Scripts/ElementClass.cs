@@ -44,10 +44,7 @@ public class ElementClass : MonoBehaviour, IDraggable
         {
             ITool tool = hit.collider.gameObject.GetComponent<ITool>();
 
-            if (tool != null)
-            {
-                Debug.Log("The GameObject under the mouse implements ITool");
-            }
+            tool?.SetElement(this.ElementItemInstance.GetComponent<ElementItem>());
         }
         
         Destroy(this.ElementItemInstance);

@@ -4,6 +4,7 @@
     {
         Solid,
         Liquid,
-        Gas
+        Gas,
+        Pulver
     }
 }
