@@ -10,6 +10,7 @@ namespace Code.Scripts
         private void Start()
         {
             this.Animator = this.GetComponent<Animator>();
+            StartWalkingIn();
         }
         
         public void StartWalkingIn()
@@ -34,6 +35,7 @@ namespace Code.Scripts
 
         private void OnMouseDown()
         {
+            return;
             StartWalkingOut();
         }
     }
