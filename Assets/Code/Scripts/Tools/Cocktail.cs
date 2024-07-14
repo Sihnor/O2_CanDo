@@ -6,6 +6,7 @@ namespace Code.Scripts
 {
     public class Cocktail : MonoBehaviour, IDraggable
     {
+        [SerializeField] private ECocktails ActualCocktail;
         BoxCollider2D BoxCollider2D;
 
         private void Start()
@@ -34,17 +35,13 @@ namespace Code.Scripts
                                      
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-            Debug.Log("Shoot raycast");
-            
             if (hit.collider != null)
             {
-                Debug.Log(hit.collider.gameObject.name);
-                
                 // Check if tag is hit
                 if (!hit.collider.CompareTag("Customer")) goto END;
                 
                 Customer customer = hit.collider.gameObject.GetComponent<Customer>();
-                customer.StartWalkingOut();
+                customer.GetCocktail(this.ActualCocktail);
                 
                 Destroy(this.gameObject);
             }

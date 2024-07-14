@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3511830927246205404}
-  - component: {fileID: 4585373932924601926}
-  - component: {fileID: 4889371636990860619}
-  - component: {fileID: -7825342501340115627}
+  - component: {fileID: 3673275197267051773}
+  - component: {fileID: 8408678092624687866}
+  - component: {fileID: 3825428586147961930}
   m_Layer: 0
-  m_Name: LuneraCocktail
+  m_Name: WrongCocktail02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4585373932924601926
+--- !u!212 &3673275197267051773
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cac23f1ebad0cda4ea9a70798b13ce24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f3d00b2a75b5e694ebbfe961e610eb39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4889371636990860619
+--- !u!61 &8408678092624687866
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.451232, y: 15}
   m_EdgeRadius: 0
---- !u!114 &-7825342501340115627
+--- !u!114 &3825428586147961930
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed0265ed6f7401491b6e8b522386b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActualCocktail: 8
+  ActualCocktail: 11

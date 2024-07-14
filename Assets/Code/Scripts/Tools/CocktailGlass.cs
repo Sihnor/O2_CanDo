@@ -7,10 +7,11 @@ namespace Code.Scripts
     public class CocktailGlass : ToolClass, ITransfer
     {
         [SerializeField] private List<SRecipe> SRecipes = new List<SRecipe>();
+        
+        [SerializeField] private List<GameObject> WrongRecipes = new List<GameObject>();
 
         public void MakeRecipe(List<SElement> ingredients)
         {
-            Debug.Log("Making Recipe");
             SRecipe rightRecipe = new SRecipe(ingredients, null);
             foreach (SRecipe recipe in this.SRecipes)
             {
@@ -32,11 +33,17 @@ namespace Code.Scripts
                 if (rightRecipe.ResultObject != null) break;
             }
 
-            if (rightRecipe.ResultObject == null) return;
-            
+            Debug.Log(rightRecipe.ResultObject);
+            if (rightRecipe.ResultObject == null)
+            {
+                int index = Random.Range(0, this.WrongRecipes.Count);
+                GameObject wrongRecipe = Instantiate(this.WrongRecipes[index]);
+                wrongRecipe.transform.position = new Vector3(3.26f, -3.46f, -1f);
+                return;
+            }
             // Instantiate the result object
             GameObject resultObject = Instantiate(rightRecipe.ResultObject);
-            resultObject.transform.position = new Vector3(0, 0, 0);
+            resultObject.transform.position = new Vector3(3.26f, -3.46f, -1f);
         }
         
         public void TransferElements(List<ElementItem> elements)

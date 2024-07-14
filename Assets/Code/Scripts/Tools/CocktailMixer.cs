@@ -11,7 +11,11 @@ namespace Code.Scripts
         public ETools Tool { get; private set; }
 
         [SerializeField] private GameObject CopyElement;
-
+        
+        private Vector3 OriginalPosition;
+        private Quaternion OriginalRotation;
+        private Coroutine shakeCoroutine;
+        
         public ElementItem ContainerElement { get; private set; }
 
         public void SetElement(ElementItem element)
@@ -37,9 +41,15 @@ namespace Code.Scripts
 
         private IEnumerator MixElements()
         {
-            Debug.Log("Mixing Elements");
+            this.OriginalPosition = transform.position;
+            this.OriginalRotation = transform.rotation;
+            
+            StartShaking(3, .1f, .1f);
+            
             yield return new WaitForSeconds(3);
-            Debug.Log("Elements Mixed");
+            
+            StopShaking();
+            
             this.CopyElement.GetComponent<ElementItem>().SetStateOfMatter(EStateOfMatter.Pulver);
             Debug.Log(this.CopyElement.GetComponent<ElementItem>().StateOfMatter);
         }
@@ -56,12 +66,55 @@ namespace Code.Scripts
             this.transform.position = currentPosition;
             if (hit.collider == null || hit.collider.gameObject.GetComponent<ITool>() == this.gameObject.GetComponent<ITool>()) return;
             
-            Debug.Log(hit.collider.gameObject.name);
             ITool tool = hit.collider.gameObject.GetComponent<ITool>();
 
             tool?.SetElement(this.ContainerElement);
             
             DeleteElement();
+        }
+
+        private void StartShaking(float duration, float positionMagnitude, float rotationMagnitude)
+        {
+            if (this.shakeCoroutine != null)
+            {
+                StopCoroutine(this.shakeCoroutine);
+            }
+            this.shakeCoroutine = StartCoroutine(Shake(duration, positionMagnitude, rotationMagnitude));
+        }
+        
+        private void StopShaking()
+        {
+            if (this.shakeCoroutine == null) return;
+            
+            StopCoroutine(this.shakeCoroutine);
+            this.CopyElement.transform.position = this.OriginalPosition;
+            this.CopyElement.transform.rotation = this.OriginalRotation;
+        }
+
+        private IEnumerator Shake(float duration, float positionMagnitude, float rotationMagnitude)
+        {
+            float elapsed = 0.0f;
+
+            while (elapsed < duration)
+            {
+                float x = Random.Range(-1f, 1f) * positionMagnitude;
+                float y = Random.Range(-1f, 1f) * positionMagnitude;
+                float z = Random.Range(-1f, 1f) * positionMagnitude;
+
+                float rotX = Random.Range(-1f, 1f) * rotationMagnitude;
+                float rotY = Random.Range(-1f, 1f) * rotationMagnitude;
+                float rotZ = Random.Range(-1f, 1f) * rotationMagnitude;
+
+                transform.localPosition = new Vector3(this.OriginalPosition.x + x, this.OriginalPosition.y + y, this.OriginalPosition.z + z);
+                transform.localRotation = new Quaternion(this.OriginalRotation.x + rotX, this.OriginalRotation.y + rotY, this.OriginalRotation.z + rotZ, this.OriginalRotation.w);
+
+                elapsed += Time.deltaTime;
+
+                yield return null;
+            }
+
+            transform.localPosition = this.OriginalPosition;
+            transform.localRotation = this.OriginalRotation; 
         }
     }
 }
