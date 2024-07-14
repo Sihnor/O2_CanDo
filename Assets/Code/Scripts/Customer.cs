@@ -6,10 +6,12 @@ namespace Code.Scripts
     public class Customer : MonoBehaviour
     {
         [SerializeField] private ECocktails FavoriteCocktail;
+        [SerializeField] private GameObject TextBubble;
         
         private Animator Animator;
         
         private bool bIsWalking = false;
+        
         
         public event Action OnFinishedWalkingOut;
 
@@ -41,6 +43,7 @@ namespace Code.Scripts
         {
             this.Animator.SetTrigger("StartWalkOut");
             this.bIsWalking = true;
+            DisableTextBlase();
         }
         
         public void ResetTriggers()
@@ -52,6 +55,10 @@ namespace Code.Scripts
         public void FinishedWalkingIn()
         {
             this.bIsWalking = false;
+            
+            this.TextBubble.SetActive(true);
+            
+            Invoke(nameof(DisableTextBlase), 5);
         }
         
         public void FinishedWalkingOut()
@@ -66,6 +73,11 @@ namespace Code.Scripts
         {
             if (this.bIsWalking) return;
             StartWalkingOut();
+        }
+
+        private void DisableTextBlase()
+        {
+            this.TextBubble.SetActive(false);
         }
     }
 }
