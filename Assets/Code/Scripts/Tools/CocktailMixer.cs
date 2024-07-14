@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Code.Scripts.Interfaces;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Code.Scripts
 {
@@ -17,6 +19,13 @@ namespace Code.Scripts
         private Coroutine shakeCoroutine;
         
         public ElementItem ContainerElement { get; private set; }
+        
+        private Collider2D Collider;
+
+        private void Awake()
+        {
+            this.Collider = GetComponent<Collider2D>();
+        }
 
         public void SetElement(ElementItem element)
         {
@@ -53,6 +62,13 @@ namespace Code.Scripts
             this.CopyElement.GetComponent<ElementItem>().SetStateOfMatter(EStateOfMatter.Pulver);
             Debug.Log(this.CopyElement.GetComponent<ElementItem>().StateOfMatter);
         }
+        
+        public void OnMouseDown()
+        {
+            base.OnMouseDown();
+            
+            this.Collider.enabled = false;
+        }
 
         public override void OnMouseUp()
         {
@@ -61,9 +77,8 @@ namespace Code.Scripts
 
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-            Vector3 currentPosition = this.transform.position;
-            currentPosition.z = -1.0f;
-            this.transform.position = currentPosition;
+            this.Collider.enabled = true;
+            
             if (hit.collider == null || hit.collider.gameObject.GetComponent<ITool>() == this.gameObject.GetComponent<ITool>()) return;
             
             ITool tool = hit.collider.gameObject.GetComponent<ITool>();
