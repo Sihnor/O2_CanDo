@@ -24,6 +24,7 @@ namespace Code.Scripts.Menu
             this.Animator = GetComponent<Animator>();
             this.NewGameButton.onClick.AddListener(StartGame);
             this.SettingsButton.onClick.AddListener(Settings);
+            this.CreditsButton.onClick.AddListener(Credits);
             this.ExitButton.onClick.AddListener(ExitGame);           
             this.BackButton.onClick.AddListener(Back);
         }
@@ -31,10 +32,13 @@ namespace Code.Scripts.Menu
         private void Back()
         {
             this.Animator.SetBool("OpenSettings", false);
-            this.BackButton.gameObject.SetActive(false);
+            this.BackButton.gameObject.transform.parent.gameObject.SetActive(false);
             SceneLoader.Instance.UnloadScene(EScenes.Settings);
         }
-
+        private void Credits()
+        {
+            SceneLoader.Instance.LoadScene(EScenes.Credits);
+        }
         private void StartGame()
         {
             SceneLoader.Instance.LoadScene(EScenes.MainGame);
@@ -56,7 +60,7 @@ namespace Code.Scripts.Menu
         
         public void OpenSettings()
         {
-            this.BackButton.gameObject.SetActive(true);
+            this.BackButton.gameObject.transform.parent.gameObject.SetActive(true);
             SceneLoader.Instance.LoadScene(EScenes.Settings, LoadSceneMode.Additive);
         }
     }
