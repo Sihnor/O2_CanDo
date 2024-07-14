@@ -1,12 +1,21 @@
 ﻿using System.Collections.Generic;
 using Code.Scripts.Interfaces;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Code.Scripts
 {
-    public class CocktailShaker : ToolClass, ITool
+    public class CocktailShaker : ToolClass, ITool, IAnimation
     {
         public ETools Tool { get; private set; }
+
+        [SerializeField] private GameObject Top;
+        private Vector3 SavePosition;
+        
+        private bool bWasGrabbed = false;
+
+        private Collider2D Collider2D;
+        
         
         public ElementItem ContainerElement { get; private set; }
         
@@ -39,11 +48,8 @@ namespace Code.Scripts
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                                      
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-
             
-            Vector3 currentPosition = this.transform.position;
-            currentPosition.z = -1.0f;
-            this.transform.position = currentPosition;
+            this.Collider2D.enabled = true;
             
             if (this.ElementItems.Count == 0) return;
             
@@ -64,9 +70,27 @@ namespace Code.Scripts
             }
         }
         
+        public void OnMouseDown()
+        {
+            base.OnMouseDown();
+            this.Collider2D.enabled = false;
+        }
+        
         public void Start()
         {
             this.bIsDragging = false;
+
+            this.Collider2D = GetComponent<Collider2D>();
+        }
+
+        public void OnMouseEnter()
+        {
+            this.Top.transform.rotation = Quaternion.Euler(0, 0, 115.793f);
+        }
+
+        public void OnMouseExit()
+        {
+            this.Top.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }

@@ -15,14 +15,24 @@ namespace Code.Scripts.Menu
         float MinSoundVolume;
         float MaxSoundVolume;
         
+        private Vector3 MinSoundBarPosition;
+        private Vector3 MaxSoundBarPosition;
+        
         private bool bIsDragging = false;
 
         private void Awake()
         {
             this.MinSoundVolume = this.StartSoundBarObject.transform.position.x;
             this.MaxSoundVolume = transform.position.x;
+            
         }
-        
+
+        private void Start()
+        {
+            this.MinSoundBarPosition = this.StartSoundBarObject.transform.position;
+            this.MaxSoundBarPosition = transform.position;
+        }
+
         public void OnPointerDown(PointerEventData eventData)
         {
             this.bIsDragging = true;
@@ -42,19 +52,25 @@ namespace Code.Scripts.Menu
             //pos.x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
             pos.x = Input.mousePosition.x;
             
-            pos.x = Mathf.Clamp(pos.x, this.MinSoundVolume, this.MaxSoundVolume);
+            Vector3 projectedPoint = ProjectPointOnLine(this.MinSoundBarPosition, this.MaxSoundBarPosition, pos);
             
-            transform.position = pos;
-            
-             float diff = this.MaxSoundVolume - this.MinSoundVolume;
+            transform.position = projectedPoint;
+            // Berechne den aktuellen Fortschritt auf der Linie
+            float distanceFromStart = Vector3.Distance(transform.position, this.MinSoundBarPosition);
+            float fillAmount = distanceFromStart / (this.MaxSoundBarPosition - this.MinSoundBarPosition).magnitude;
 
-             float scaledToZero = pos.x - this.MinSoundVolume;
-             
-             float volume = scaledToZero/diff;
-             
-             this.FullSoundBar.fillAmount = volume;
-             
-             GameManager.Instance.SoundVolume = volume;
+            // Setze den fillAmount des UI-Images
+            this.FullSoundBar.fillAmount = fillAmount; 
+        }
+        
+        Vector3 ProjectPointOnLine(Vector3 lineStart, Vector3 lineEnd, Vector3 point)
+        {
+            Vector3 lineDirection = lineEnd - lineStart;
+            float lineLength = lineDirection.magnitude;
+            lineDirection.Normalize();
+
+            float projectLength = Mathf.Clamp(Vector3.Dot(point - lineStart, lineDirection), 0.0f, lineLength);
+            return lineStart + lineDirection * projectLength;
         }
     }
 }
