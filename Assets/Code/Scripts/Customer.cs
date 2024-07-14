@@ -50,12 +50,15 @@ namespace Code.Scripts
 
         public void StartWalkingIn()
         {
+            GameObject temp = new GameObject();
+            Debug.Log("Customer is walking in");
             this.Animator.SetTrigger("StartWalkIn");
             this.bIsWalking = true;
             instance = FMODUnity.RuntimeManager.CreateInstance("event:/gameplay/footsteps_sand");
-            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(temp));
             
             instance.start();
+            Destroy(temp);
         }
         
         public void StartWalkingOut()
