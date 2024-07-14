@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Code.Scripts.Interfaces;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Code.Scripts
@@ -12,6 +13,9 @@ namespace Code.Scripts
         private Vector3 SavePosition;
         
         private bool bWasGrabbed = false;
+
+        private Collider2D Collider2D;
+        
         
         public ElementItem ContainerElement { get; private set; }
         
@@ -44,6 +48,8 @@ namespace Code.Scripts
                                      
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
             
+            this.Collider2D.enabled = true;
+            
             if (this.ElementItems.Count == 0) return;
             
             if (hit.collider != null)
@@ -63,9 +69,17 @@ namespace Code.Scripts
             }
         }
         
+        public void OnMouseDown()
+        {
+            base.OnMouseDown();
+            this.Collider2D.enabled = false;
+        }
+        
         public void Start()
         {
             this.bIsDragging = false;
+
+            this.Collider2D = GetComponent<Collider2D>();
         }
 
         public void OnMouseEnter()

@@ -32,7 +32,7 @@ namespace Code.Scripts.Menu
         private void Back()
         {
             this.Animator.SetBool("OpenSettings", false);
-            this.BackButton.gameObject.SetActive(false);
+            this.BackButton.gameObject.transform.parent.gameObject.SetActive(false);
             SceneLoader.Instance.UnloadScene(EScenes.Settings);
         }
         private void Credits()
@@ -60,7 +60,7 @@ namespace Code.Scripts.Menu
         
         public void OpenSettings()
         {
-            this.BackButton.gameObject.SetActive(true);
+            this.BackButton.gameObject.transform.parent.gameObject.SetActive(true);
             SceneLoader.Instance.LoadScene(EScenes.Settings, LoadSceneMode.Additive);
         }
     }
