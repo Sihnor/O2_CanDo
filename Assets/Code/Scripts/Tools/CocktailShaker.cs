@@ -34,6 +34,7 @@ namespace Code.Scripts
 
         public override void OnMouseUp()
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/place_device");
             this.bIsDragging = false;
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                                      

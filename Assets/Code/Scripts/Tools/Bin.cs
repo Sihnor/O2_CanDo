@@ -9,6 +9,7 @@ namespace Code.Scripts
 
         public void TransferElements(List<ElementItem> elements)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/trashcan");
         }
     }
 }

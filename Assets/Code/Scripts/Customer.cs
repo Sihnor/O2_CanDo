@@ -13,6 +13,8 @@ namespace Code.Scripts
         
         public event Action OnFinishedWalkingOut;
 
+        private FMOD.Studio.EventInstance instance;
+
         public void GetCocktail(ECocktails cocktail)
         {
             if (this.FavoriteCocktail == cocktail)
@@ -33,6 +35,8 @@ namespace Code.Scripts
         
         public void StartWalkingIn()
         {
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/LoopEvent");
+            instance.start();
             this.Animator.SetTrigger("StartWalkIn");
             this.bIsWalking = true;
         }
@@ -51,6 +55,8 @@ namespace Code.Scripts
 
         public void FinishedWalkingIn()
         {
+            instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            instance.release();
             this.bIsWalking = false;
         }
         

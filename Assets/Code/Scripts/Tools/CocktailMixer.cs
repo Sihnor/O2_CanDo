@@ -56,6 +56,7 @@ namespace Code.Scripts
 
         public override void OnMouseUp()
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/place_device");
             this.bIsDragging = false;
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -75,6 +76,7 @@ namespace Code.Scripts
 
         private void StartShaking(float duration, float positionMagnitude, float rotationMagnitude)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/mixer");
             if (this.shakeCoroutine != null)
             {
                 StopCoroutine(this.shakeCoroutine);
