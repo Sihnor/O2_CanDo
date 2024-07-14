@@ -43,6 +43,9 @@ namespace Code.Scripts
             Vector3 currentPosition = this.transform.position;
             currentPosition.z = -1.0f;
             this.transform.position = currentPosition;
+            
+            if (this.ElementItems.Count == 0) return;
+            
             if (hit.collider != null)
             {
                 if (hit.collider == null ) return;
@@ -56,7 +59,7 @@ namespace Code.Scripts
                 {
                     Destroy(element.gameObject);
                 }
-                
+                this.ElementItems.Clear();
             }
         }
         
