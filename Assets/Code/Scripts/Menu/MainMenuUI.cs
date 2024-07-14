@@ -10,6 +10,7 @@ namespace Code.Scripts.Menu
     public class MainMenuUI : MonoBehaviour
     {
         private Animator Animator;
+        [SerializeField] private menu_music SaniSound;
         
         [SerializeField] private Button NewGameButton;
         [SerializeField] private Button LoadGameButton;
@@ -31,22 +32,31 @@ namespace Code.Scripts.Menu
 
         private void Back()
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/ui/button_click");
+
             this.Animator.SetBool("OpenSettings", false);
             this.BackButton.gameObject.transform.parent.gameObject.SetActive(false);
             SceneLoader.Instance.UnloadScene(EScenes.Settings);
         }
         private void Credits()
         {
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/ui/button_click");
             SceneLoader.Instance.LoadScene(EScenes.Credits);
         }
         private void StartGame()
         {
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/ui/button_click");
+            this.SaniSound.StopMusic();
             SceneLoader.Instance.LoadScene(EScenes.MainGame);
         }
         
         private void ExitGame()
         {
-            #if UNITY_EDITOR
+
+            FMODUnity.RuntimeManager.PlayOneShot("event:/ui/button_click");
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
             #else
             Application.Quit();
@@ -55,6 +65,8 @@ namespace Code.Scripts.Menu
         
         private void Settings()
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/ui/button_click");
+
             this.Animator.SetBool("OpenSettings", true);
         }
         

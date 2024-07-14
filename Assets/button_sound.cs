@@ -24,6 +24,11 @@ public class button_sound : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        
+    }
+
+    private void OnMouseOver()
+    {
         FMODUnity.RuntimeManager.PlayOneShot("event:/ui/button_hover");
     }
 
