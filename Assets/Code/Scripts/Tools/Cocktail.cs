@@ -35,19 +35,26 @@ namespace Code.Scripts
                                      
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
+            this.BoxCollider2D.enabled = true;
             if (hit.collider != null)
             {
                 // Check if tag is hit
-                if (!hit.collider.CompareTag("Customer")) goto END;
-                
-                Customer customer = hit.collider.gameObject.GetComponent<Customer>();
-                customer.GetCocktail(this.ActualCocktail);
-                
-                Destroy(this.gameObject);
+                if (hit.collider.CompareTag("Customer")) OnCustomer(hit.collider.gameObject.GetComponent<Customer>());
+                if (hit.collider.CompareTag("Muelleimer")) OnMuelleimer();
             }
             
-            END:
-            this.BoxCollider2D.enabled = true;
+        }
+
+        private void OnCustomer(Customer customer)
+        {
+            customer.GetCocktail(this.ActualCocktail);
+            
+            Destroy(this.gameObject);
+        }
+
+        private void OnMuelleimer()
+        {
+            Destroy(this.gameObject);
         }
     }
 }

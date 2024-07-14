@@ -31,7 +31,7 @@ namespace Code.Scripts
             
             int randomIndex = Random.Range(0, this.customers.Count);
             this.CurrentCustomer = this.customers[randomIndex];
-            this.customers[randomIndex].transform.position = new Vector3(38.5f, 7.5f, 0.8f);
+            this.customers[randomIndex].transform.position = new Vector3(-11.5f, 0f, 0.1f);
             
             this.customers[randomIndex].SetActive(true);
         }
