@@ -25,6 +25,7 @@ public class DropDownUI : MonoBehaviour, IDraggable
 
     public void OnMouseDown()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/pull_paper");
         this.ListOffset = this.ListObject.transform.position;
         this.MouseOffset = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }

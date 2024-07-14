@@ -53,6 +53,7 @@ namespace Code.Scripts
 
         public override void OnMouseUp()
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/place_device");
         }
     }
 }
