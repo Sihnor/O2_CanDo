@@ -1,4 +1,6 @@
-﻿namespace Code.Scripts.Interfaces
+﻿using System.Collections.Generic;
+
+namespace Code.Scripts.Interfaces
 {
     public interface ITool
     {
@@ -6,6 +8,7 @@
         
         ElementItem ContainerElement { get; }
         
-        bool SetElement(ElementItem element);
+        void SetElement(ElementItem element);
+
     }
 }

@@ -14,31 +14,56 @@ namespace Code.Scripts
         
         [SerializeField] ElementItem ElementItem;
 
-        public bool SetElement(ElementItem element)
+        public void SetElement(ElementItem element)
         {
-            if (element.StateOfMatter is EStateOfMatter.Solid) return false;
+            if (!element) return;
+            if (element.StateOfMatter is EStateOfMatter.Solid) return ;
             
             GameObject CopyElement = new GameObject();
             CopyElement.AddComponent<ElementItem>();
             
             CopyElement.GetComponent<ElementItem>().SetElement(element.Element);
             CopyElement.GetComponent<ElementItem>().SetStateOfMatter(element.StateOfMatter);
-
-            #region MEINE_CODE
-
-            
-
-            #endregion
             
             this.ContainerElement = CopyElement.GetComponent<ElementItem>();
             
             this.ElementItems.Add(this.ContainerElement);
             this.ElementItem = this.ContainerElement;            
             this.ContainerElement = element;
-            return true;
         }
 
         public override void OnMouseUp()
+        {
+            this.bIsDragging = false;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                                     
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+
+            
+            Vector3 currentPosition = this.transform.position;
+            currentPosition.z = -1.0f;
+            this.transform.position = currentPosition;
+            
+            if (this.ElementItems.Count == 0) return;
+            
+            if (hit.collider != null)
+            {
+                if (hit.collider == null ) return;
+                
+                ITransfer transfer = hit.collider.gameObject.GetComponent<ITransfer>();
+                
+                transfer?.TransferElements(this.ElementItems);
+                
+                // Destroy all gameobjects in the list
+                foreach (ElementItem element in this.ElementItems)
+                {
+                    Destroy(element.gameObject);
+                }
+                this.ElementItems.Clear();
+            }
+        }
+        
+        public void Start()
         {
             this.bIsDragging = false;
         }

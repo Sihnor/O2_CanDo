@@ -3,9 +3,16 @@
     public enum EElement
     {
         None,
-        Gold,
-        Platin,
+        Chlorine,
+        Floran,
+        Giftin,
+        Hydrogen,
         Iron,
-        
+        Lavin,
+        Lichtin,
+        Magil,
+        Oxygene,
+        Sulfor,
+        Terrino
     }
 }

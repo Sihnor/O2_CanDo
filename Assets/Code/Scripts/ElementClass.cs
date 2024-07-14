@@ -40,13 +40,11 @@ public class ElementClass : MonoBehaviour, IDraggable
 
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-        bool bIsCompatible = false;
-        
         if (hit.collider != null)
         {
             ITool tool = hit.collider.gameObject.GetComponent<ITool>();
 
-            if (tool != null) bIsCompatible = tool.SetElement(this.ElementItemInstance.GetComponent<ElementItem>());
+            tool?.SetElement(this.ElementItemInstance.GetComponent<ElementItem>());
         }
         
         Destroy(this.ElementItemInstance);
