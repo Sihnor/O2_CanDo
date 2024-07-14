@@ -300,6 +300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer08
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: f51d35a45f3e88e44a1f08dd1503ea30, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: f51d35a45f3e88e44a1f08dd1503ea30, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -307,7 +311,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: f51d35a45f3e88e44a1f08dd1503ea30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 139848906}
   m_SourcePrefab: {fileID: 100100000, guid: f51d35a45f3e88e44a1f08dd1503ea30, type: 3}
 --- !u!4 &75177123 stripped
 Transform:
@@ -328,6 +335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107117685}
+  - component: {fileID: 107117686}
   m_Layer: 0
   m_Name: CustomerHandler
   m_TagString: Untagged
@@ -350,6 +358,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &107117686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107117684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40e6fd43d3340e3b549992097839c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customers:
+  - {fileID: 32753871}
+  - {fileID: 840173057}
+  - {fileID: 1855923805}
+  - {fileID: 807410059}
+  - {fileID: 389319680}
+  - {fileID: 2059715173}
+  - {fileID: 1982138506}
+  - {fileID: 139848905}
+  - {fileID: 993711329}
+  - {fileID: 86059410}
+  - {fileID: 1699965874}
 --- !u!1001 &137929284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,6 +434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer07
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: 64c4aeded0dac3343bb4888717e7261b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: 64c4aeded0dac3343bb4888717e7261b, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -409,7 +445,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: 64c4aeded0dac3343bb4888717e7261b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1982138507}
   m_SourcePrefab: {fileID: 100100000, guid: 64c4aeded0dac3343bb4888717e7261b, type: 3}
 --- !u!4 &137929285 stripped
 Transform:
@@ -421,6 +460,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7829889703693723183, guid: f51d35a45f3e88e44a1f08dd1503ea30, type: 3}
   m_PrefabInstance: {fileID: 75177122}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &139848906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139848905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &229852734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,6 +543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer03
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: 24759f86139a3d94588de9d3beb0bb12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: 24759f86139a3d94588de9d3beb0bb12, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -480,7 +554,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: 24759f86139a3d94588de9d3beb0bb12, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855923806}
   m_SourcePrefab: {fileID: 100100000, guid: 24759f86139a3d94588de9d3beb0bb12, type: 3}
 --- !u!4 &229852735 stripped
 Transform:
@@ -498,6 +575,7 @@ GameObject:
   - component: {fileID: 291965773}
   - component: {fileID: 291965772}
   - component: {fileID: 291965771}
+  - component: {fileID: 291965774}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -563,6 +641,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &291965774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291965770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 504337759
+      Data2: 1147055660
+      Data3: -15632235
+      Data4: -792297461
+    Path: event:/music/music_game
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &339217816 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4879126893001594580, guid: 19434e0ac9ed2b341920a74da8d0c161, type: 3}
@@ -682,6 +791,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer11
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: 60291de0d6b78d04b8fa08ee391dd8b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: 60291de0d6b78d04b8fa08ee391dd8b3, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -689,7 +802,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: 60291de0d6b78d04b8fa08ee391dd8b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1699965875}
   m_SourcePrefab: {fileID: 100100000, guid: 60291de0d6b78d04b8fa08ee391dd8b3, type: 3}
 --- !u!4 &365113753 stripped
 Transform:
@@ -753,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer05
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: 77375a662665b8f47afb4f23fde8aeef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: 77375a662665b8f47afb4f23fde8aeef, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -760,13 +880,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: 77375a662665b8f47afb4f23fde8aeef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 471230432}
   m_SourcePrefab: {fileID: 100100000, guid: 77375a662665b8f47afb4f23fde8aeef, type: 3}
 --- !u!4 &471230431 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 41153521115041949, guid: 77375a662665b8f47afb4f23fde8aeef, type: 3}
   m_PrefabInstance: {fileID: 471230430}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &471230432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389319680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &600777666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8125940483312802541, guid: 19434e0ac9ed2b341920a74da8d0c161, type: 3}
@@ -2068,6 +2222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer04
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: dc94a4b3470409d45a7bb08f1c1d24be, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: dc94a4b3470409d45a7bb08f1c1d24be, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -2075,13 +2233,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: dc94a4b3470409d45a7bb08f1c1d24be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1079305972}
   m_SourcePrefab: {fileID: 100100000, guid: dc94a4b3470409d45a7bb08f1c1d24be, type: 3}
 --- !u!4 &1079305971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 41153521115041949, guid: dc94a4b3470409d45a7bb08f1c1d24be, type: 3}
   m_PrefabInstance: {fileID: 1079305970}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1079305972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807410059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1283976528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2134,6 +2326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer06
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: f2d3cfe31cc0b72449ff55acfe865b18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: f2d3cfe31cc0b72449ff55acfe865b18, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -2141,7 +2337,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: f2d3cfe31cc0b72449ff55acfe865b18, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2059715174}
   m_SourcePrefab: {fileID: 100100000, guid: f2d3cfe31cc0b72449ff55acfe865b18, type: 3}
 --- !u!4 &1283976529 stripped
 Transform:
@@ -2238,7 +2437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7829889703693723183, guid: e91bac6b8e81a4e419b793abd4c15fbf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: e91bac6b8e81a4e419b793abd4c15fbf, type: 3}
       propertyPath: m_Size.y
@@ -2251,6 +2450,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: e91bac6b8e81a4e419b793abd4c15fbf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1361737535}
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: e91bac6b8e81a4e419b793abd4c15fbf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1361737540}
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: e91bac6b8e81a4e419b793abd4c15fbf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1361737541}
   m_SourcePrefab: {fileID: 100100000, guid: e91bac6b8e81a4e419b793abd4c15fbf, type: 3}
 --- !u!4 &1361737530 stripped
 Transform:
@@ -2277,6 +2482,68 @@ MonoBehaviour:
       Data3: 189842079
       Data4: 1799423029
     Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1361737540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32753871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1446370775
+      Data2: 1195566806
+      Data3: 431110290
+      Data4: -604698208
+    Path: event:/stinger/victory
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1361737541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32753871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1987644388
+      Data2: 1285235430
+      Data3: 1880517047
+      Data4: -910219884
+    Path: event:/stinger/defeat
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -2377,6 +2644,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7829889703693723183, guid: 60291de0d6b78d04b8fa08ee391dd8b3, type: 3}
   m_PrefabInstance: {fileID: 365113752}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1699965875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699965874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1767318236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2429,6 +2727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer09
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: 178a5192e5ac3aa4ca9dd2afe2af3936, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: 178a5192e5ac3aa4ca9dd2afe2af3936, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -2436,13 +2738,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: 178a5192e5ac3aa4ca9dd2afe2af3936, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1767318238}
   m_SourcePrefab: {fileID: 100100000, guid: 178a5192e5ac3aa4ca9dd2afe2af3936, type: 3}
 --- !u!4 &1767318237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 41153521115041949, guid: 178a5192e5ac3aa4ca9dd2afe2af3936, type: 3}
   m_PrefabInstance: {fileID: 1767318236}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767318238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993711329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1773282968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,6 +2852,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7829889703693723183, guid: 24759f86139a3d94588de9d3beb0bb12, type: 3}
   m_PrefabInstance: {fileID: 229852734}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1855923806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855923805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1893107110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2568,6 +2935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer10
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: a6f8bfed6ced91245933262c68193350, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: a6f8bfed6ced91245933262c68193350, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -2575,13 +2946,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: a6f8bfed6ced91245933262c68193350, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1893107112}
   m_SourcePrefab: {fileID: 100100000, guid: a6f8bfed6ced91245933262c68193350, type: 3}
 --- !u!4 &1893107111 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 41153521115041949, guid: a6f8bfed6ced91245933262c68193350, type: 3}
   m_PrefabInstance: {fileID: 1893107110}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893107112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86059410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1948387070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,6 +3077,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7829889703693723183, guid: 64c4aeded0dac3343bb4888717e7261b, type: 3}
   m_PrefabInstance: {fileID: 137929284}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1982138507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982138506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1984424495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,6 +3197,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7829889703693723183, guid: f2d3cfe31cc0b72449ff55acfe865b18, type: 3}
   m_PrefabInstance: {fileID: 1283976528}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2059715174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059715173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &2116933557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2813,6 +3280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer02
       objectReference: {fileID: 0}
+    - target: {fileID: 7829889703693723183, guid: dc309065b4312704298ee8df82046c03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542255598647008512, guid: dc309065b4312704298ee8df82046c03, type: 3}
       propertyPath: m_Size.y
       value: 6
@@ -2820,13 +3291,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7829889703693723183, guid: dc309065b4312704298ee8df82046c03, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2116933559}
   m_SourcePrefab: {fileID: 100100000, guid: dc309065b4312704298ee8df82046c03, type: 3}
 --- !u!4 &2116933558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 41153521115041949, guid: dc309065b4312704298ee8df82046c03, type: 3}
   m_PrefabInstance: {fileID: 2116933557}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2116933559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840173057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 82120510
+      Data2: 1139351087
+      Data3: 189842079
+      Data4: 1799423029
+    Path: event:/gameplay/footsteps_sand
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1365146261077482424
 PrefabInstance:
   m_ObjectHideFlags: 0

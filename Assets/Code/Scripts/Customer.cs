@@ -21,9 +21,10 @@ namespace Code.Scripts
         {
             if (this.FavoriteCocktail == cocktail)
             {
-                Debug.Log("Customer is happy");
-            }else{
-                Debug.Log("Customer is not happy");
+                FMODUnity.RuntimeManager.PlayOneShot("event:/stinger/victory");
+            }
+            else{
+                FMODUnity.RuntimeManager.PlayOneShot("event:/stinger/defeat");
             }
             
             StartWalkingOut();
@@ -36,21 +37,25 @@ namespace Code.Scripts
 
         private void Start()
         {
-            this.Animator = this.GetComponent<Animator>();
+            return;
+            
             StartWalkingIn();
         }
 
         private void OnEnable()
         {
+            this.Animator = this.GetComponent<Animator>();
             StartWalkingIn();
         }
 
         public void StartWalkingIn()
         {
-            instance = FMODUnity.RuntimeManager.CreateInstance("event:/LoopEvent");
-            instance.start();
             this.Animator.SetTrigger("StartWalkIn");
             this.bIsWalking = true;
+            instance = FMODUnity.RuntimeManager.CreateInstance("event:/gameplay/footsteps_sand");
+            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            
+            instance.start();
         }
         
         public void StartWalkingOut()
@@ -68,7 +73,7 @@ namespace Code.Scripts
 
         public void FinishedWalkingIn()
         {
-            instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             instance.release();
             this.bIsWalking = false;
             
