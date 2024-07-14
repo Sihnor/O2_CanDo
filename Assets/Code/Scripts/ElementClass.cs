@@ -8,6 +8,7 @@ public class ElementClass : MonoBehaviour, IDraggable
 
     [SerializeField] private GameObject ElementItem;
     private GameObject ElementItemInstance;
+    [SerializeField] private EStateOfMatter FutureState;
 
     public void Start()
     {
@@ -23,6 +24,20 @@ public class ElementClass : MonoBehaviour, IDraggable
         this.ElementItemInstance = Instantiate(this.ElementItem, this.transform.position, Quaternion.identity);
         Vector3 temp = new Vector3(this.ElementItemInstance.transform.position.x, this.ElementItemInstance.transform.position.y, 10);
         this.ElementItemInstance.transform.position = temp;
+
+        switch (this.FutureState)
+        {
+            case EStateOfMatter.Solid:
+                FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/material_hard");
+                break;
+            case EStateOfMatter.Liquid:
+                FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/material_liquid");
+                break;
+            case EStateOfMatter.Gas:
+                FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/material_gas");
+                break;
+        }
+        
     }
 
     public void OnMouseDrag()
@@ -42,6 +57,7 @@ public class ElementClass : MonoBehaviour, IDraggable
 
         if (hit.collider != null)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/material_drop");
             ITool tool = hit.collider.gameObject.GetComponent<ITool>();
 
             tool?.SetElement(this.ElementItemInstance.GetComponent<ElementItem>());

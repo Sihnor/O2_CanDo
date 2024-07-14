@@ -10,6 +10,7 @@ namespace Code.Scripts.Menu
     public class MainMenuUI : MonoBehaviour
     {
         private Animator Animator;
+        [SerializeField] private menu_music SaniSound;
         
         [SerializeField] private Button NewGameButton;
         [SerializeField] private Button LoadGameButton;
@@ -41,6 +42,7 @@ namespace Code.Scripts.Menu
         }
         private void StartGame()
         {
+            this.SaniSound.StopMusic();
             SceneLoader.Instance.LoadScene(EScenes.MainGame);
         }
         
