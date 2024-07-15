@@ -15,9 +15,19 @@ namespace Code.Scripts
 
         private float fWidth = 0.0f;
         private float fHeight = 0.0f;
-        
+        bool isEnabled;
+        private void OnEnable()
+        {
+            isEnabled = true;
+        }
+
+        private void OnDisable()
+        {
+            isEnabled = false;
+        }
         public void OnMouseDown()
         {
+            if (!isEnabled) return;
             FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/grab_device");
             this.bIsDragging = true;
             this.fHeight = this.EndPosition.y / 2;
@@ -30,6 +40,7 @@ namespace Code.Scripts
 
         public void OnMouseDrag()
         {
+            if (!isEnabled) return;
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
             float minX = this.StartPosition.x - this.fWidth;
@@ -62,6 +73,7 @@ namespace Code.Scripts
 
         private void OnDrawGizmos()
         {
+            if (!isEnabled) return;
             FMODUnity.RuntimeManager.PlayOneShot("event:/gameplay/grab_device");
             // Draw red rectangle  without infill only border on the bottom of the screen
             Gizmos.color = Color.red;

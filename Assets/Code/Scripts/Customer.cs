@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Code.Scripts.Managers;
+using System;
 using UnityEngine;
 
 namespace Code.Scripts
@@ -21,9 +22,14 @@ namespace Code.Scripts
         {
             if (this.FavoriteCocktail == cocktail)
             {
+                GameManager.Instance.CustomerServed++;
+                GameManager.Instance.CustomerServedRight++;
                 FMODUnity.RuntimeManager.PlayOneShot("event:/stinger/victory");
             }
-            else{
+            else
+            {
+                GameManager.Instance.CustomerServed++;
+                GameManager.Instance.CustomerServedWrong++;
                 FMODUnity.RuntimeManager.PlayOneShot("event:/stinger/defeat");
             }
             

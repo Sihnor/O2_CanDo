@@ -29,7 +29,8 @@ public class ambience_sound : MonoBehaviour
             
             this.GameMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             this.AmbientMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            
+
+            GameManager.Instance.ResetScores();
             SceneLoader.Instance.LoadScene(EScenes.MainMenu);
         }
     }

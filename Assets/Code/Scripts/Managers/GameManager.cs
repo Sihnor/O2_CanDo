@@ -23,7 +23,18 @@ namespace Code.Scripts.Managers
         #endregion
 
         public float SoundVolume { get;  set; } = 1f;
-        
+
+        public int CustomerServed = 0;
+        public int CustomerServedRight = 0;
+        public int CustomerServedWrong = 0;
+
+
+        public void ResetScores()
+        {
+            CustomerServed = 0;
+            CustomerServedRight = 0;
+            CustomerServedWrong = 0;
+        }
     }
 }
         
